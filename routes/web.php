@@ -27,3 +27,6 @@ Route::resource('posts', 'App\Http\Controllers\PostsController');
 // Route::get('/vriend', function () {
 //     return 'Hello, Friend';
 // });
+Auth::routes();
+
+Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');

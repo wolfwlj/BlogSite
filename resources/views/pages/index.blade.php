@@ -5,5 +5,5 @@
 
 <h1>{{$title}}</h1>
 <a href="/login">login</a>
-<a href="registrer">registrer</a>
+<a href="register">register</a>
 @endsection
