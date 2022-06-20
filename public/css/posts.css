@@ -1,0 +1,19 @@
+.topGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    align-items: center;
+    justify-items: center;
+    border: 2px solid rgba(0, 0, 0, 0.251);
+    margin-bottom: 1rem;
+    border-radius: 15px;
+}
+.gridRow > *{
+    padding: 10px;
+}
+.gridRow{
+    width: 100%;
+}
+.img{
+    width: 15rem;
+    height: 15rem;
+}

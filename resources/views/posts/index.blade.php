@@ -1,23 +1,22 @@
 @extends('layouts.app')
 
+<link rel="stylesheet" href="{{asset('css/posts.css')}}">
 
 @section('content')
 
-    <h1>Posts From all users</h1>
+    <h1 class="title">Recent posts from all users</h1>
     @if(count($posts) > 0)
         @foreach($posts as $post)
-            <div class="well">
-                <div class="row">
-                    <div class="col-md-4 col-sm-4">
-                        <img style="max-width:300px" src="/storage/cover_images/{{$post->cover_image}}" alt="image">
+                <div class="topGrid">
+                    <div class="gridRow">
+                        <img class="img" src="/storage/cover_images/{{$post->cover_image}}" alt="image">
                     </div>
-                    <div class="col-md-8 col-sm-8">
+                    <div class="gridRow">
                         <h3><a href="/posts/{{$post->id}}">{{$post->title}}</a></h3>
                         <small>Written on {{$post->created_at}} by {{$post->user->name}}</small>
                     </div>
                 </div>
 
-            </div>
         @endforeach
         {{$posts->links()}}
         @else

@@ -2,6 +2,7 @@
 
 
 @section('content')
+<a href="/dashboard">Back</a>
 
     <h1>Edit Post</h1>
     

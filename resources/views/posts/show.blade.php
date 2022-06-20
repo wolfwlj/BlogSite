@@ -16,13 +16,15 @@
     @if(!Auth::guest())
 
         @if(Auth::user()->id == $post->user_id)
-            
-        <a href="/posts/{{$post->id}}/edit">Edit</a>
+        <div class="editDiv">
+            <a href="/posts/{{$post->id}}/edit"><button class="navButt postButt edit">Edit</button></a>
+
+        </div>
 
 
         {!! Form::open(['action' => ['App\Http\Controllers\PostsController@destroy', $post->id], 'method' => 'POST']) !!}
             {{Form::hidden('_method', 'DELETE')}}
-            {{Form::submit('Delete', ['class' => 'xxx'])}}
+            {{Form::submit('Delete', ['class' => 'navButt postButt delete'])}}
 
 
         {!! Form::close() !!}

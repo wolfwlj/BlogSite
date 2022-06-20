@@ -8,7 +8,7 @@ class PagesController extends Controller
 {
     
     public function index(){
-        $title = 'Welcome to Tapsave';
+        $title = "Wolf's fake blog | Made with Laravel";
         // return view('pages.index', compact('title'));
         return view('pages.index')->with('title', $title);
 

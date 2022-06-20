@@ -1,66 +1,61 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+<link rel="stylesheet" href="{{asset('css/dashboard.css')}}">
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+    <div class="">
 
-                    {{ __('You are logged in!') }}
+
+            <div class="topSection">
+                <h1 class="title">Your Blog's Dashboard</h1>
+                <div class="centerFlex">
+                    <a href="/posts/create"><button class="navButt">Create post</button></a> 
+
                 </div>
-
-                
             </div>
-
-            <div>
-                <h1>Create a new article</h1>
-                <a href="/posts/create">Create post</a>
-            
-                <h3>
-                    Your posts: 
-                </h3>
+            <div class="mainSection">
+                <h2>
+                    Your posts : 
+                </h2>
+                
                 @if(count($posts) > 0)
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Title</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
-                            </tr>
+                <ul class="responsive-table">
 
-                        </thead>
-                        <tbody>
-                            @foreach($posts as $post)
-                                <tr>
-                                    <td>{{$post->title}}</td>
-                                    <td><a href="/posts/{{$post->id}}/edit">Edit</a></td>
-                                    <td>
-                                        <form action="/posts/{{$post->id}}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit">Delete</button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
+                    @foreach($posts as $post)
 
-                    </table>
+
+                        <li class="table-row">
+                            <div class="titleGrid">
+                                <div class="col col-1" data-label="Title">{{$post->title}}</div>
+                            </div>
+                            <div class="buttonGrid">
+                                <div class="editDiv" data-label="Edit"><a href="/posts/{{$post->id}}/edit">
+                                    
+                                    
+                                    <button class="navButt postButt edit">Edit</button>
+                                
+                                
+                                </a></div>
+                                <div class="deleteDiv" data-label="Delete"> 
+                                    <form action="/posts/{{$post->id}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="navButt postButt delete" type="submit">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </li>
+
+                    @endforeach
+                </ul>
+
 
                     @else
                     <p>No posts found</p>
                     @endif   
             </div>
-        </div>
+
     </div>
-</div>
 @endsection

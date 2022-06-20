@@ -1,0 +1,40 @@
+.header{
+    padding: 20px;
+    text-align: center;
+}
+
+li{
+    /* no decoration */
+    list-style: none;
+
+    
+}
+.allNav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.leftSideNav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+.leftSideNav > *{
+    margin-right: 1rem;
+}
+
+
+.rightSideNav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    justify-content: right;
+
+}
+.rightSideNav > *{
+    margin-right: 1rem;
+}
+
+
