@@ -2,25 +2,24 @@
 
 
 @section('content')
+<link rel="stylesheet" href="{{asset('css/create.css')}}">
 
-    <h1>Create Post</h1>
+    <h1 class="title">Create Post</h1>
     
     {!! Form::open(['action' => 'App\Http\Controllers\PostsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
-        <div class="form-group">
-            {{Form::label('title', 'Title')}}
-            {{Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'Title'])}}
+        <div class="formTitle">
+            {{Form::text('title', '', ['class' => 'titelInput', 'placeholder' => 'Title'])}}
         </div>
-        <div style="max-width: 800px" class="form-group">
-            {{Form::label('body', 'Body')}}
-            {{Form::textarea('body', '', ['id'=>'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Body'])}}
+        <div  class="formBody">
+            {{Form::textarea('body', '', ['id'=>'article-ckeditor', 'class' => 'bodyInput', 'placeholder' => 'asdasdasdsa'])}}
         </div>
 
 
-        <div>
+        <div class="formImage">
             {{Form::file('cover_image')}}
         </div>
         <br>
-        {{Form::submit('Submit', ['class' => 'xxx'])}}
+        {{Form::submit('Create Post', ['class' => 'navButt choosefileButt'])}}
 
 
 
