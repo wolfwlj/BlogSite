@@ -1,1 +1,5 @@
-work in progress Blog site, might turn it into more of a reddit clone.
+Wolf's fake blog site project!
+
+Make blog posts, see others, edit posts etc..
+
+Demo : http://blogproject.wolfolthuis.com/
